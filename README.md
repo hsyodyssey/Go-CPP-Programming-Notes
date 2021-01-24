@@ -14,3 +14,10 @@ Daily Programming Tips in Go
 - Go语言中的数据大小是固定的。
 - Go语言中中Slice(切片)的大小可以是动态的。
 - Go语言中，可以定义一个不指明长度的切片。
+- 二维切片需要初始化:
+    // 初始化一个n行m列的切片
+    var K[][] int.
+    for i := 0; i <=n; i++ {
+        inline := make([]int, m)
+        K := append(K, inline)
+    }
