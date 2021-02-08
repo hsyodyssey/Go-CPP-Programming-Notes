@@ -25,3 +25,5 @@ Daily Programming Tips in Go
         K := append(K, inline)
     }
 ```
+
+- Go 自带了解析CSV的库 “encoding/csv”
