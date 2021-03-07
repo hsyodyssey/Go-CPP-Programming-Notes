@@ -27,3 +27,5 @@ Daily Programming Tips in Go
 ```
 
 - Go 自带了解析CSV的库 “encoding/csv”
+- Go Interface 是一种type
+- 要实现Interface 必须实现interface中所有的方法
