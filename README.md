@@ -29,3 +29,7 @@ Daily Programming Tips in Go
 - Go 自带了解析CSV的库 “encoding/csv”
 - Go Interface 是一种type
 - 要实现Interface 必须实现interface中所有的方法
+- 使用runtime Package中的 MemStats 和 ReadMemStats 来测量当前程序中Memory的使用状况。
+
+
+
