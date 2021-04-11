@@ -30,6 +30,7 @@ Daily Programming Tips in Go
 - Go Interface 是一种type
 - 要实现Interface 必须实现interface中所有的方法
 - 使用runtime Package中的 MemStats 和 ReadMemStats 来测量当前程序中Memory的使用状况。
+- Context 是 Go 1.7 之后新引入的标准库接口。
 
 
 
