@@ -33,6 +33,9 @@ Daily Programming Tips in Go
 - Context 是 Go 1.7 之后新引入的标准库接口。
 - sync/atomic标准库包中提供的原子操作，通常是无锁的。
 
+##
+- Log.Fatal会直接退出程序，不会执行defer相关的函数
+
 
 
 
