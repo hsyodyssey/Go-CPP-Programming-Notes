@@ -2,7 +2,7 @@
 
 Daily Programming Tips in Go
 
-## General
+## General Tips
 
 - 保持包名和目录名的一致。
 - 包名尽量简短，应该为小写单词，不要使用下划线或者驼峰式命名。
