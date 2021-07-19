@@ -2,6 +2,8 @@
 
 Daily Programming Tips in Go
 
+## General
+
 - 保持包名和目录名的一致。
 - 包名尽量简短，应该为小写单词，不要使用下划线或者驼峰式命名。
 - 文件名为小写单词，使用下划线分割。
@@ -33,7 +35,14 @@ Daily Programming Tips in Go
 - Context 是 Go 1.7 之后新引入的标准库接口。
 - sync/atomic标准库包中提供的原子操作，通常是无锁的。
 
-##
+## Go and C and Python
+
+- Go编译成so文件时，需要在函数上一行添加//export xxx(函数名).
+  - 注意//与export中间不能有空格
+  - Example 位于example/pygo
+
+## Log
+
 - Log.Fatal会直接退出程序，不会执行defer相关的函数
 
 
