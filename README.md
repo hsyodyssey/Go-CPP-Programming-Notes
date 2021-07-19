@@ -37,6 +37,7 @@ Daily Programming Tips in Go
 
 ## Go and C and Python
 
+- Python 可以调用Go编译的动态链接库 and.so (Shared Object) 
 - Go编译成so文件时，需要在函数上一行添加//export xxx(函数名).
   - 注意//与export中间不能有空格
   - Example 位于example/pygo
