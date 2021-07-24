@@ -46,6 +46,6 @@ Daily Programming Tips in Go
 
 - Log.Fatal会直接退出程序，不会执行defer相关的函数
 
+## Reference
 
-
-
+- Go语言高性能编程[link](https://geektutu.com/post/high-performance-go.html)
