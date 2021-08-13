@@ -36,9 +36,15 @@ Daily Programming Tips in Go
 - sync/atomic标准库包中提供的原子操作，通常是无锁的。
 - Function Types: A function type denotes the set of all functions with the same parameter and result types.
 
+## Go Unit Testing
+
+- Go 单元测试中，执行到t.Error()/ t.Errorf() 测试函数会输出错误的log信息并继续执行。
+- Go 单元测试中，执行到t.Fatal()/ t.Fatalf() 测试函数会输出错误的log信息并结束测试。
+- Go 单元测试中，如果不满足断言assert.Equal() 测试函数会结束并报错。
+
 ## Go and C and Python
 
-- Python 可以调用Go编译的动态链接库 and.so (Shared Object) 
+- Python 可以调用Go编译的动态链接库 and.so (Shared Object)
 - Go编译成so文件时，需要在函数上一行添加//export xxx(函数名).
   - 注意//与export中间不能有空格
   - Example 位于example/pygo
@@ -50,3 +56,4 @@ Daily Programming Tips in Go
 ## Reference
 
 - Go语言高性能编程[link](https://geektutu.com/post/high-performance-go.html)
+- Go By Example[link](https://gobyexample.com/)
