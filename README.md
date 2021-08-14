@@ -1,6 +1,25 @@
-# Go-Developer-Tips
+# Go-Programming-Notes
 
-Daily Programming Tips in Go
+## Introduction
+
+This repo records the daily programming nodes in Golang.
+
+### Why Golang?
+
+Golang是一种非常适合分布式系统/数据库(Distributed System/database)，区块链(Blockchain)项目开发的编程语言。
+
+- **语法简单**。它学习曲线平滑。有其他高级语言编程经验的人，可以快速上手。
+- **高并发基因**。它对高并发，分布式程序有更加灵活简洁的标准库支持。不需要依赖第三方库就可以快速构建后端/网络/高并发应用。
+- **跨平台**。它支持跨系统交叉编译。MacOS/Win 也可以编译Linux下可以运行的程序，不需要担心环境依赖的问题。
+- **新**。相对于C/C++，Golang的设计理念更新，历史包袱更少，对各种数据结构/文件比如JSON, CSV支持简洁流畅。
+- **快**。它相比C++编译快，相比Python运行快。
+
+所以Golang非常适合做一些分布式，区块链领域的学术/工程项目的原型(Prototype)开发工作。
+
+### 不足
+
+- **轮子少**。相比于Java生态系统中充足的轮子，Go社区中的轮子的发展还属于初级阶段。
+- **代码冗余**。相比于C++，Golang对范型(Generic Programming)支持较差。对同一份逻辑，不同的数据结构需要重复的代码。
 
 ## General Tips
 
