@@ -38,7 +38,8 @@ Golang是一种非常适合分布式系统/数据库(Distributed System/database
 - Go语言中，可以定义一个不指明长度的切片。
 - 二维切片需要初始化:
 
-```2-D Slice init
+```go
+    //2-D Slice init
     // 初始化一个n行m列的切片
     var K[][] int.
     for i := 0; i <=n; i++ {
@@ -54,6 +55,14 @@ Golang是一种非常适合分布式系统/数据库(Distributed System/database
 - Context 是 Go 1.7 之后新引入的标准库接口。
 - sync/atomic标准库包中提供的原子操作，通常是无锁的。
 - Function Types: A function type denotes the set of all functions with the same parameter and result types.
+
+
+## FQA
+
+- What is struct{} and struct{}{} ?
+  - struct{} 表示一个零元素的struct结构。通常会被用在没有任何信息被存储的场景中。
+  - struct{}{} 表示一个存储了struct{}的Composite literal.
+  - Source: [Stackoverflow](https://stackoverflow.com/questions/45122905/how-do-struct-and-struct-work-in-go)
 
 ## Go Unit Testing
 
