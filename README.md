@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This repo records the daily programming nodes in Golang.
+This repo records the daily programming nodes of Golang.
 
 ### Why Golang?
 
-Golang是一种非常适合分布式系统/数据库(Distributed System/database)，区块链(Blockchain)项目开发的编程语言。
+Golang是一种非常适合分布式系统/数据库(Distributed System/database)，区块链(Blockchain)项目开发的编程语言，因为:
 
 - **语法简单**。它学习曲线平滑。有其他高级语言编程经验的人，可以快速上手。
 - **高并发基因**。它对高并发，分布式程序有更加灵活简洁的标准库支持。不需要依赖第三方库就可以快速构建后端/网络/高并发应用。
@@ -55,7 +55,6 @@ Golang是一种非常适合分布式系统/数据库(Distributed System/database
 - Context 是 Go 1.7 之后新引入的标准库接口。
 - sync/atomic标准库包中提供的原子操作，通常是无锁的。
 - Function Types: A function type denotes the set of all functions with the same parameter and result types.
-
 
 ## FQA
 
