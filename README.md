@@ -1,4 +1,4 @@
-# Go-Programming-Notes
+# Go/CPP-Programming-Notes
 
 ## Introduction
 
