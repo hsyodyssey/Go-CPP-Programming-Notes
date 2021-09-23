@@ -55,6 +55,19 @@ Golang是一种非常适合分布式系统/数据库(Distributed System/database
 - Context 是 Go 1.7 之后新引入的标准库接口。
 - sync/atomic标准库包中提供的原子操作，通常是无锁的。
 - Function Types: A function type denotes the set of all functions with the same parameter and result types.
+- 当初始化结构体时，对于结构体中复杂的成员，需要显式的声明它的类型信息，否则编译无法通过。
+  - For example:
+  
+  ```Go
+  var pd1 PaperDetails = PaperDetails{
+  Title:  "testtitle",
+  Topics: []string{"test topic1", "test topic2"},
+
+  Authors:      []string{"test author1", "test author2"},
+  Comments:     []string{"test comment1"},
+  Keysentencts: map[string][]Sentence{"test topic1": {sent1, sent2}, "test topic2": {sent2, sent3}},
+  }
+  ```
 
 ## FQA
 
