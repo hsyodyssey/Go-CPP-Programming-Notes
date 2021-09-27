@@ -69,6 +69,31 @@ Golang是一种非常适合分布式系统/数据库(Distributed System/database
   }
   ```
 
+## Go Struct
+
+Struct是是Go语言中最重要的自定义的数据结构之一。它的用法与C++/Java中的class既有相同点又有不同点。
+
+- Struct 有两种初始化方式:
+  - 指针的方式, 这种方式会返回一个指向新的结构体的指针:
+
+    ``` Golang
+    var s * Student
+    s = new(Student)
+    s.name = "test"
+
+    \\or
+    var s = new (Student)
+    s.name = "test"
+    ```
+
+  - With a struct literal, 这种方式会返回一个值变量(等于第一种方式的*s):
+
+    ```Golang
+    s := Student{
+      name: "test",
+    }
+    ```
+
 ## FQA
 
 - What is struct{} and struct{}{} ?
