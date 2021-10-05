@@ -94,12 +94,26 @@ Struct是是Go语言中最重要的自定义的数据结构之一。它的用法
     }
     ```
 
+## Map
+
+- 可以通过第二个返回值的方式来判断map中是否存在目标key。
+
+```go
+m := make(map[string]sting)
+m["001"] = "test001"
+m["002"] = "test002"
+value, isExist := m["001"] // value: string: test001, isExist: bool : true
+value, isExist := m["003"] // value: , isExist: bool : false
+
+```
+
 ## FQA
 
 - What is struct{} and struct{}{} ?
   - struct{} 表示一个零元素的struct结构。通常会被用在没有任何信息被存储的场景中。
   - struct{}{} 表示一个存储了struct{}的Composite literal.
   - Source: [Stackoverflow](https://stackoverflow.com/questions/45122905/how-do-struct-and-struct-work-in-go)
+  - interface是一种万能的数据类型，他可以接受任何类型的值。
 
 ## Go Unit Testing
 
