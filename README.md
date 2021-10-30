@@ -128,6 +128,10 @@ value, isExist := m["003"] // value: , isExist: bool : false
   - 注意//与export中间不能有空格
   - Example 位于example/pygo
 
+## Tricks
+
+- 利用CPU Cache的特性来加速程序的运行。 目前x86 CPU Cache line的长度为64 bytes，CPU Cache缓存数据通常以Cache line为单位。可以使用Cache Padding的方式，通过额外添加数据结构，构造64 bytes的结构来降低CPU Cache中False Sharing的产生，提高程序运行速度。
+
 ## Log
 
 - Log.Fatal会直接退出程序，不会执行defer相关的函数
@@ -136,3 +140,4 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 - Go语言高性能编程[link](https://geektutu.com/post/high-performance-go.html)
 - Go By Example[link](https://gobyexample.com/)
+- https://www.pengrl.com/p/9125/
