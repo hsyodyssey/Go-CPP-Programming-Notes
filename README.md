@@ -107,6 +107,8 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 ```
 
+- Go 语言原生的map类型不支持并发的读写操作。一个第三方的解决方案, [concurrent-map](https://github.com/orcaman/concurrent-map).
+
 ## FQA
 
 - What is struct{} and struct{}{} ?
