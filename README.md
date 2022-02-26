@@ -109,6 +109,13 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 - Go 语言原生的map类型不支持并发的读写操作。一个第三方的解决方案, [concurrent-map](https://github.com/orcaman/concurrent-map).
 
+## 并发
+
+- go 天然的支持协程，使得go语言天生适合高并发的应用。
+- 并发避免不了的会遇到data race的问题，可以通过go run -race xx .go/ go build -race xx .go来检测程序中的data race 问题。
+- 对于可能产生Data race的代码，尽量使用atomic类型，或者加锁Mutex.
+
+
 ## FQA
 
 - What is struct{} and struct{}{} ?
