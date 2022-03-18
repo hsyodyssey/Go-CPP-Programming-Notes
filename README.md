@@ -118,7 +118,6 @@ value, isExist := m["003"] // value: , isExist: bool : false
 - 并发避免不了的会遇到data race的问题，可以通过go run -race xx .go/ go build -race xx .go来检测程序中的data race 问题。
 - 对于可能产生Data race的代码，尽量使用atomic类型，或者加锁Mutex.
 
-
 ## FQA
 
 - What is struct{} and struct{}{} ?
@@ -132,6 +131,12 @@ value, isExist := m["003"] // value: , isExist: bool : false
 - Go 单元测试中，执行到t.Error()/ t.Errorf() 测试函数会输出错误的log信息并继续执行。
 - Go 单元测试中，执行到t.Fatal()/ t.Fatalf() 测试函数会输出错误的log信息并结束测试。
 - Go 单元测试中，如果不满足断言assert.Equal() 测试函数会结束并报错。
+
+## Go 性能分析
+
+- PProf
+- Trace
+  - go tool trace trace.out
 
 ## Go and C and Python
 
@@ -150,6 +155,8 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 ## Reference
 
-- Go语言高性能编程[link](https://geektutu.com/post/high-performance-go.html)
-- Go By Example[link](https://gobyexample.com/)
+- Go语言高性能编程 [link](https://geektutu.com/post/high-performance-go.html)
+- Go By Example [link](https://gobyexample.com/)
 - https://www.pengrl.com/p/9125/
+- Go PProf [[link]](https://segmentfault.com/a/1190000016412013)
+- Go Trace [[link]](https://segmentfault.com/a/1190000019736288)
