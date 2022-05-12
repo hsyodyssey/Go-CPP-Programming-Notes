@@ -9,24 +9,24 @@ This repo records the daily programming nodes of Golang.
 Golang是一种非常适合分布式系统/数据库(Distributed System/database)，区块链(Blockchain)项目开发的编程语言，因为:
 
 - **语法简单**。它学习曲线平滑。有其他高级语言编程经验的开发人员，可以快速上手。
-- **高并发基因**。它提供了强大简洁易用稳定的标准库，对高并发，分布式程序有更加灵活简洁全面的标准库支持。不需要依赖第三方库就可以快速构建后端/网络/高并发应用。
+- **高并发基因**。它提供了强大简洁易用稳定的标准库，对高并发，分布式程序有灵活简洁全面的标准库支持。不需要依赖第三方库就可以快速构建后端/网络/高并发应用。
 - **跨平台**。它支持跨系统交叉编译。MacOS/Win 也可以编译Linux下可以运行的程序，不需要担心环境依赖的问题。
 - **新**。相对于C/C++，Golang的设计理念更新，历史包袱更少。对各种~~新型数据结构~~比如JSON, CSV提供了简洁流畅的原生标准库支持。
 - **快**。它相比C++编译快，相比Python运行快。
 
-所以Golang非常适合做一些分布式，区块链领域的学术/工程项目的原型(Prototype)开发工作。
+所以Go非常适合做一些分布式，区块链领域的学术/工程项目的原型(Prototype)开发工作。
 
 ### 不足
 
 - **轮子少**。相比于Java生态系统中充足的轮子，Go社区中的轮子的发展还属于初级阶段。
-- **代码冗余**。相比于C++，Golang对范型(Generic Programming)支持较差。对同一份逻辑，不同的数据结构需要重复的代码。
+- **代码冗余**。相比于C++，Golang对范型(Generic Programming)支持较差。针对相同的逻辑，在面对不同的数据结构仍需要编写大量重复的代码。
 
 ## General Tips
 
 - 保持包名和目录名的一致。
 - 包名尽量简短，应该为小写单词，不要使用下划线或者驼峰式命名。
 - 文件名为小写单词，使用下划线分割。
-- Go语言区分大小写，小写字母开头的单词为包内访问，相当于Java/C++中的Private。跨包使用的成员变量/函数要使用大写字母开头。
+- Go语言区分大小写，小写字母开头的单词表示仅为包内访问，相当于Java/C++中的Private。跨包使用的成员变量/函数要使用大写字母开头。
 - 变量和结构体的命名使用驼峰式。
 - 通过更改首字母的大小写，来控制结构体的使用场景。
 - 常量通常使用全部大写字母。
@@ -113,11 +113,19 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 - Go 语言原生的map类型不支持并发的读写操作。一个第三方的解决方案, [concurrent-map](https://github.com/orcaman/concurrent-map).
 
-## 并发
+## 并发(goroutine)
 
-- go 天然的支持协程，使得go语言天生适合高并发的应用。
-- 并发避免不了的会遇到data race的问题，可以通过go run -race xx .go/ go build -race xx .go来检测程序中的data race 问题。
+- Go原生支持协程(Goroutine)，使得go语言天生适合高并发的应用。
+- 并发避免不了的会潜在Data Race的问题，可以通过go run -race xx .go/ go build -race xx .go来检测程序中的data race 问题。
 - 对于可能产生Data race的代码，尽量使用atomic类型，或者加锁Mutex.
+
+## Go Channel
+
+- 在go语言中，Channel主要用于goroutine之间的通信。
+- 同时，Channel还可以起到阻塞的作用。例如，我们可以声明一个Bool类型的Channel: c := make(chan bool)。如果我们将`<-c`放在函数A中，那么在`c`接受到之前，函数A将会一直处于阻塞(Block)的状态.
+- `chan<- int`表示send-only Channel，只能接收数据。
+- `<-chan int`表示receive-only的 Channel，只能向外传输数据。
+- Channel其实是一个先入先出(FIFO)的队列。
 
 ## FQA
 
