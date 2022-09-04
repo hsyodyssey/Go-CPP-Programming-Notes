@@ -116,6 +116,7 @@ value, isExist := m["003"] // value: , isExist: bool : false
 ## 内存管理
 
 - Go的堆(Heap)是从0xc000000000(40bits，10个hex)位置开始增长的。相关的讨论:https://github.com/golang/go/issues/27583
+  - 关于Address space layout randomization(ASLR)的介绍：https://en.wikipedia.org/wiki/Address_space_layout_randomization
 
 
 ## 并发(goroutine)
