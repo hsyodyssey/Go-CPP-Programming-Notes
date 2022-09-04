@@ -113,6 +113,11 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 - Go 语言原生的map类型不支持并发的读写操作。一个第三方的解决方案, [concurrent-map](https://github.com/orcaman/concurrent-map).
 
+## 内存管理
+
+- Go的堆(Heap)是从0xc000000000(40bits，10个hex)位置开始增长的。相关的讨论:https://github.com/golang/go/issues/27583
+
+
 ## 并发(goroutine)
 
 - Go原生支持协程(Goroutine)，使得go语言天生适合高并发的应用。
