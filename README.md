@@ -115,9 +115,8 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 ## 内存管理
 
-- Go的堆(Heap)是从0xc000000000(40bits，10个hex)位置开始增长的。相关的讨论:https://github.com/golang/go/issues/27583
-  - 关于Address space layout randomization(ASLR)的介绍：https://en.wikipedia.org/wiki/Address_space_layout_randomization
-
+- Go的堆(Heap)是从0xc000000000(40bits，10个hex)位置开始增长的。相关的讨论:<https://github.com/golang/go/issues/27583>
+  - 关于Address space layout randomization(ASLR)的介绍：<https://en.wikipedia.org/wiki/Address_space_layout_randomization>
 
 ## 并发(goroutine)
 
@@ -132,6 +131,24 @@ value, isExist := m["003"] // value: , isExist: bool : false
 - `chan<- int`表示send-only Channel，只能接收数据。
 - `<-chan int`表示receive-only的 Channel，只能向外传输数据。
 - Channel其实是一个先入先出(FIFO)的队列。
+
+## Go File
+
+- Go file.ReadAt的实现中使用了一个for循环来反复的向目标数组b中传入数据。不知道为什么要这么设计，而不是一次性的从文件中拿出所需要的数据。
+
+  ```go
+   for len(b) > 0 {
+  m, e := f.pread(b, off)
+  if e != nil {
+   err = f.wrapErr("read", e)
+   break
+  }
+  n += m
+  b = b[m:]
+  off += int64(m)
+
+ }
+  ```
 
 ## FQA
 
@@ -172,6 +189,6 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 - Go语言高性能编程 [link](https://geektutu.com/post/high-performance-go.html)
 - Go By Example [link](https://gobyexample.com/)
-- https://www.pengrl.com/p/9125/
+- <https://www.pengrl.com/p/9125/>
 - Go PProf [[link]](https://segmentfault.com/a/1190000016412013)
 - Go Trace [[link]](https://segmentfault.com/a/1190000019736288)
