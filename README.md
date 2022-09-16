@@ -139,7 +139,13 @@ value, isExist := m["003"] // value: , isExist: bool : false
 ## Go Complier
 
 - Go自带的编译器gc没用使用的LLVM-IR作为中间代码
-- 在编译的使用 GOSSAFUNC=xxx go build yyy.go 的命令可以生成一个关于yyy.go 中xxx函数的SSA的html
+- 在编译的使用 `GOSSAFUNC=xxx go build yyy.go` 的命令可以生成一个关于yyy.go 中xxx函数的SSA的html
+- Go程序在编译的时候会inline(内联)，展开一些函数的调用，来加快程序的执行，但是会带来二进制程序增大和内存的使用的增加。
+  - 可以通过`go build -gcflags -m`的方式来查看编译过程中的优化
+  - go结构体比较时的[内存逃逸问题](https://mp.weixin.qq.com/s?__biz=MzUxMDI4MDc1NA==&mid=2247488256&idx=1&sn=adf0f5906407d5d9c52e65c7530fd106&chksm=f904065dce738f4bc943aa7d82eb5d7e3fe35c3ed92bbf8e7f6bae16bc226b8357606606727f&cur_album_id=1515516076481101825&scene=189#rd)
+- Go中的堆逃逸问题
+  - 程序的内存一般分为堆区和栈区，在Go中堆和栈的管理都是由编译器完成的。堆内存是一片动态区域，依赖于垃圾回收机制进行管理，管理成本较高。栈内存是通常是静态内存区，管理成本较低，在编译的过程中通常可以直接调用底层的汇编指令来完成。
+
 
 
 ## FQA
@@ -184,3 +190,5 @@ value, isExist := m["003"] // value: , isExist: bool : false
 - <https://www.pengrl.com/p/9125/>
 - Go PProf [[link]](https://segmentfault.com/a/1190000016412013)
 - Go Trace [[link]](https://segmentfault.com/a/1190000019736288)
+- Go 逃逸分析[[link]](https://eddycjy.gitbook.io/golang/di-1-ke-za-tan/stack-heap)
+- Go 逃逸分享-2 [[link]](https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-stack-management/)
