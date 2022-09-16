@@ -136,19 +136,11 @@ value, isExist := m["003"] // value: , isExist: bool : false
 
 - Go file.ReadAt的实现中使用了一个for循环来反复的向目标数组b中传入数据。不知道为什么要这么设计，而不是一次性的从文件中拿出所需要的数据。
 
-  ```go
-   for len(b) > 0 {
-  m, e := f.pread(b, off)
-  if e != nil {
-   err = f.wrapErr("read", e)
-   break
-  }
-  n += m
-  b = b[m:]
-  off += int64(m)
+## Go Complier
 
- }
-  ```
+- Go自带的编译器gc没用使用的LLVM-IR作为中间代码
+- 在编译的使用 GOSSAFUNC=xxx go build yyy.go 的命令可以生成一个关于yyy.go 中xxx函数的SSA的html
+
 
 ## FQA
 
