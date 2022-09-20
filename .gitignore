@@ -1,0 +1,5 @@
+# Output file
+*.out
+*/*.out
+*/*/*.out
+*/*/*/*.out
